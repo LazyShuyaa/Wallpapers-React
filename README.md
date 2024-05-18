@@ -4,7 +4,7 @@ This project is a simple wallpaper gallery web application built with React and 
 
 ## Demo
 
-Check out the live demo of the project here: [Wallpaper Gallery Demo](https://react-wallpapers.vercel.app/)
+Check out the live demo of the project here: [Wallpaper Gallery Demo](https://wallpapers-react.vercel.app/)
 
 ## Screenshots
 
@@ -14,7 +14,7 @@ Check out the live demo of the project here: [Wallpaper Gallery Demo](https://re
 
 This project is deployed on Vercel. Click the button below to deploy your own instance:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/your-username/wallpaper-gallery)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/LazyShuyaa/Wallpapers-React)
 
 ## Usage
 
