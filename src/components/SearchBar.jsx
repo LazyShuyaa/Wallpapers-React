@@ -9,7 +9,7 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/wallpaper/${searchQuery}`);
+    navigate(`/${searchQuery}`);
   };
 
   const handleChange = (e) => {
