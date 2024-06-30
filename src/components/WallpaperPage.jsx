@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const SpinnerLoader = () => (
-  <div className="flex justify-center my-5">
+  <div className="flex justify-center items-center h-48">
     <div className="loader border-t-4 border-blue-500 rounded-full w-12 h-12 animate-spin"></div>
   </div>
 );
@@ -71,19 +71,19 @@ const WallpaperPage = () => {
   return (
     <div className="relative p-5 sm:p-8">
       {error && <div className="text-red-500 text-center mt-4">{error}</div>}
-      <div className="masonry-layout columns-1 gap-5 sm:columns-2 md:columns-3 lg:columns-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {wallpapers.map((wallpaper, index) => {
           const isLastWallpaper = wallpapers.length === index + 1;
           const ref = isLastWallpaper ? lastWallpaperRef : null;
 
           return (
-            <a key={index} href={wallpaper.image_url} target="_blank" rel="noopener noreferrer" ref={ref} className="break-inside avoid mb-5 block">
-              <div className="bg-gray-200 shadow-md overflow-hidden">
+            <a key={index} href={wallpaper.image_url} target="_blank" rel="noopener noreferrer" ref={ref} className="block break-inside avoid mb-5">
+              <div className="relative bg-gray-200 shadow-md overflow-hidden" style={{ paddingBottom: '75%' }}>
                 <img
                   src={wallpaper.thumbnail_url}
                   alt={wallpaper.caption}
                   loading="lazy"
-                  className="w-full object-cover transition-opacity duration-500"
+                  className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500"
                 />
               </div>
             </a>
