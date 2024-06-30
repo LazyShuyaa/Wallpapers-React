@@ -92,7 +92,7 @@ const WallpaperPage = () => {
 
           return (
             <a key={index} href={wallpaper.image_url} target="_blank" rel="noopener noreferrer" ref={ref} className={`break-inside avoid mb-5 block col-span-${colSpan}`}>
-              <div className="bg-gray-200 shadow-md overflow-hidden">
+              <div className="bg-gray-200 shadow-md overflow-hidden" style={{ width: `${100 * colSpan}%` }}>
                 <img
                   src={wallpaper.thumbnail_url}
                   alt={wallpaper.caption}
