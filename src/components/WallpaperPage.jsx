@@ -2,6 +2,12 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
+const SkeletonLoader = () => (
+  <div className="bg-gray-200 shadow-md overflow-hidden animate-pulse">
+    <div className="w-full h-48 bg-gray-300"></div>
+  </div>
+);
+
 const WallpaperPage = () => {
   const [wallpapers, setWallpapers] = useState([]);
   const [newWallpapers, setNewWallpapers] = useState([]);
@@ -88,6 +94,7 @@ const WallpaperPage = () => {
             </a>
           );
         })}
+        {loading && Array.from({ length: 10 }).map((_, index) => <SkeletonLoader key={index} />)}
       </div>
       {!hasMore && !loading && (
         <div className="text-center mt-4">No More Wallpapers</div>
