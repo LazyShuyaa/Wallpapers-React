@@ -14,6 +14,7 @@ const WallpaperPage = () => {
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const { query } = useParams();
   const observer = useRef();
 
@@ -30,6 +31,7 @@ const WallpaperPage = () => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
+      setImagesLoaded(false);
       try {
         const data = await fetchWallpapers(page);
         const imagePromises = data.map(
@@ -45,6 +47,7 @@ const WallpaperPage = () => {
         setWallpapers((prevWallpapers) => [...prevWallpapers, ...data]);
         setHasMore(data.length > 0);
         setLoading(false);
+        setImagesLoaded(true);
       } catch (error) {
         setError('Error');
         setLoading(false);
